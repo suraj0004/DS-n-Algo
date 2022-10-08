@@ -5,7 +5,7 @@ class LinkList{
 
     //Private variables
     #head
-    
+
     constructor(){
         this.#head = null;
     }
@@ -42,6 +42,17 @@ class LinkList{
 
     hasData(){
         return !!this.#head
+    }
+
+    find(isEqual){
+        let ptr = this.#head;
+        while (ptr) {
+            if(isEqual(ptr.data)){
+                return ptr.data
+            }
+            ptr = ptr.next            
+        }
+        return null
     }
 }
 
