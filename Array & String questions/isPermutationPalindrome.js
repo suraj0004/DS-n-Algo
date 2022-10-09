@@ -1,6 +1,6 @@
 function isPermutationPalindrome(str = ''){
 
-    // converting to lower case to avoid case sensitive char.
+    // converting to lower case to avoid case sensitive char, and removing spaces from the string
     str = str.toLowerCase().split(" ").join("");
 
     // created a char count map to store frequency of all chars
@@ -53,7 +53,7 @@ function isPermutationPalindrome(str = ''){
  */
 function isPermutationPalindrome_optimized(str = '') {
 
-    // converting to lower case to avoid case sensitive char.
+    // converting to lower case to avoid case sensitive char, and removing spaces from the string
     str = str.toLowerCase().split(" ").join("");
 
 
