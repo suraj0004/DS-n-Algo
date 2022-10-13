@@ -65,7 +65,7 @@ class kthLast extends LinkList {
             p2 = p2.next;
         }
 
-        return p2 ? p2.data : null
+        return p2
     }
 }
 
@@ -77,3 +77,5 @@ let list = new kthLast([
 ])
 
 console.log(list.getKth_optimal(3));
+
+module.exports = kthLast
