@@ -1,7 +1,7 @@
 class Node {
     // public
-    constructor(data) {
-        this.next = null
+    constructor(data, next = null) {
+        this.next = next
         this.data = data
     }
 }
@@ -35,6 +35,14 @@ class LinkList {
             p = p.next;
         }
         p.next = node;
+    }
+
+    appendBefore(d){
+        if (!this.#head) {
+            return this.#appendFirstNode(d)
+        }
+        let node = new Node(d, this.#head);
+        this.#head = node;
     }
 
     printList() {
