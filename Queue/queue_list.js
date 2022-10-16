@@ -61,6 +61,8 @@ class Queue {
     }
 }
 
+module.exports = Queue;
+
 let queue = new Queue()
 
 queue.add(1)
