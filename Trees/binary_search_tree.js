@@ -1,3 +1,5 @@
+
+
 class Node {
   constructor(data = null) {
     this.data = data;
@@ -48,6 +50,21 @@ function postOrder(root){
     }
 }
 
+function levelOrder(root){
+    let queue = []
+    queue.push(root)
+    while (queue.length) {
+        let node = queue.shift()
+        console.log(node.data);
+        if(node.leftChild !== null){
+            queue.push(node.leftChild)
+        }
+        if(node.rightChild !== null){
+            queue.push(node.rightChild)
+        }
+    }
+}
+
 function main() {
   const root = new Node(8);
   insert(root, new Node(4));
@@ -66,6 +83,9 @@ function main() {
 
   console.log('post order:');
   postOrder(root);
+
+  console.log('level Order:');
+  levelOrder(root);
 }
 
 main();
