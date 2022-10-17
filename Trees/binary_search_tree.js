@@ -24,6 +24,30 @@ function insert(root, node) {
   }
 }
 
+function inOrder(root){
+    if(root !== null){
+        inOrder(root.leftChild);
+        console.log(root.data);
+        inOrder(root.rightChild)
+    }
+}
+
+function preOrder(root){
+    if(root !== null){
+        console.log(root.data);
+        preOrder(root.leftChild)
+        preOrder(root.rightChild)
+    }
+}
+
+function postOrder(root){
+    if(root !== null){
+        postOrder(root.leftChild);
+        postOrder(root.rightChild);
+        console.log(root.data);
+    }
+}
+
 function main() {
   const root = new Node(8);
   insert(root, new Node(4));
@@ -33,7 +57,15 @@ function main() {
   insert(root, new Node(20));
 
   console.clear();
-  console.log(JSON.stringify(root));
+
+  console.log('in order: ');
+  inOrder(root)
+
+  console.log('pre order:');
+  preOrder(root);
+
+  console.log('post order:');
+  postOrder(root);
 }
 
 main();
