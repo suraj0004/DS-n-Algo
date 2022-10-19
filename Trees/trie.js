@@ -17,6 +17,18 @@ class TrieNode {
   insertTerminatingNode() {
     this.children["*"] = new TerminatingTrieNode();
   }
+
+  hasChild(char){
+    return this.children.hasOwnProperty(char)
+  }
+
+  getChild(char){
+    return this.children[char];
+  }
+
+  hasTerminationNode(){
+    return this.children.hasOwnProperty("*")
+  }
 }
 
 class TerminatingTrieNode extends TrieNode {
@@ -37,6 +49,29 @@ class Trie {
     }
     parent.insertTerminatingNode();
   }
+
+  wordExist(word){
+    let parent = this.root;
+    for(let i = 0; i < word.length; i++){
+        if(!parent.hasChild(word[i])){
+            return false;
+        }
+        parent = parent.getChild(word[i])
+    }
+
+    return parent.hasTerminationNode();
+  }
+
+  checkPrefix(prefix){
+    let parent = this.root;
+    for(let i = 0; i < prefix.length; i++){
+        if(!parent.hasChild(prefix[i])){
+            return false;
+        }
+        parent = parent.getChild(prefix[i])
+    }
+    return true;
+  }
 }
 
 function main() {
@@ -52,7 +87,8 @@ function main() {
   trie.insert("surajupp");
 
   console.clear();
-  console.log(JSON.stringify(trie.root));
+  console.log( trie.wordExist('su') );
+  console.log( trie.checkPrefix('su') );
 }
 
 main();
