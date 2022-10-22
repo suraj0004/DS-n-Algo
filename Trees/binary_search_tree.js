@@ -88,7 +88,7 @@ function main() {
   levelOrder(root);
 }
 
-main();
+// main();
 
 /**
      * OP
@@ -118,3 +118,10 @@ main();
   }
 }
      */
+
+
+module.exports = {
+  Node,
+  levelOrder,
+  insert
+}
