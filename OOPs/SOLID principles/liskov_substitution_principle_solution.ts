@@ -74,7 +74,7 @@ function testRectangleArea(box: Rectangle):boolean {
 }
 
 /**
- * This function takes object of rectangle and test its calculateArea function.
+ * This function takes object of Square class and test its calculateArea function.
  * @param box 
  * @returns boolean
  */
